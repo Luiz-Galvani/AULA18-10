@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.divisoria {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px; 
+    display: flex;
+}
+
+.divisoria button,
+.divisoria input {
+    margin-right: 10px; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.div1, .div2 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 45%;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
