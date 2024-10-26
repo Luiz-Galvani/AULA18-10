@@ -9,6 +9,8 @@ function criarParagrafos() {
 
   for (var i = 1; i <= numParagrafos; i++) {
     var item = document.createElement("li");
+    item.setAttribute("draggable", true); 
+    item.addEventListener("dragstart", dragStart);
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = `paragrafo-${i}`;
@@ -21,6 +23,26 @@ function criarParagrafos() {
   }
     div1.appendChild(listaNaoOrdenada);
 }
+function dragStart(event) {
+  event.dataTransfer.setData("text/plain", event.target.innerHTML); 
+  event.dataTransfer.setData("text/plain", event.target.outerHTML); 
+}
+
+function allowDrop(event) {
+  event.preventDefault(); 
+}
+
+function drop(event) {
+  event.preventDefault(); 
+  var data = event.dataTransfer.getData("text/plain"); 
+  var div2 = document.getElementById("div2");
+  div2.innerHTML += data; 
+}
+
+
+let div2 = document.getElementById("div2");
+div2.addEventListener("dragover", allowDrop);
+div2.addEventListener("drop", drop);
 
 function copiarParagrafos() {
   var div2 = document.getElementById("div2");
